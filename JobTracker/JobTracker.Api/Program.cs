@@ -1,4 +1,7 @@
 
+using JobTracker.Api.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace JobTracker.Api
 {
     public class Program
@@ -12,6 +15,8 @@ namespace JobTracker.Api
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+            builder.Services.AddDbContext<AppDbContext>(o =>
+    o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
             var app = builder.Build();
 

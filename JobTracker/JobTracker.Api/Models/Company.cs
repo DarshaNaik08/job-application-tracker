@@ -7,7 +7,7 @@
         public string? Website { get; set; }
         public string? Location { get; set; }
 
-        public List<JobApplication> { get; set; } = [];
+        public List<JobApplication> Applications { get; set; } = [];
        
     }
 }
