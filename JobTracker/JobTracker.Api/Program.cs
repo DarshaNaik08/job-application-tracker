@@ -24,6 +24,10 @@ namespace JobTracker.Api
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/openapi/v1.json", "Job Tracker API v1");
+                });
             }
 
             app.UseHttpsRedirection();
