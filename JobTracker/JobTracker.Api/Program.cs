@@ -25,6 +25,9 @@ namespace JobTracker.Api
             builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
             builder.Services.AddScoped<ICompanyService, CompanyService>();
 
+            builder.Services.AddScoped<IJobApplicationRepository, JobApplicationRepository>();
+            builder.Services.AddScoped<IJobApplicationService, JobApplicationService>();
+
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
