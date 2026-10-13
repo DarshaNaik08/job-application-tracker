@@ -67,4 +67,6 @@ public class JobApplicationRepository(AppDbContext db) : IJobApplicationReposito
     public void Remove(JobApplication application) => db.JobApplications.Remove(application);
 
     public Task SaveChangesAsync(CancellationToken ct) => db.SaveChangesAsync(ct);
+
+    public Task<bool> ExistsAsync(Guid id, CancellationToken ct) => db.JobApplications.AnyAsync(a => a.Id == id, ct);
 }

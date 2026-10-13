@@ -12,4 +12,5 @@ public interface IJobApplicationRepository
     void Add(JobApplication application);
     void Remove(JobApplication application);
     Task SaveChangesAsync(CancellationToken ct);
+    Task<bool> ExistsAsync(Guid id, CancellationToken ct);
 }
