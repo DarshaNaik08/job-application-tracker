@@ -31,6 +31,9 @@ namespace JobTracker.Api
             builder.Services.AddScoped<IInterviewRepository, InterviewRepository>();
             builder.Services.AddScoped<IInterviewService, InterviewService>();
 
+            builder.Services.AddScoped<INoteRepository, NoteRepository>();
+            builder.Services.AddScoped<INoteService, NoteService>();
+
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
